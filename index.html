@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pray time</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <main>
+    <div class="cont">
+      <div class="loaction-and-date">
+        <div class="loaction">
+          <form action="">
+            <label for="country">Country</label>
+            <input id="country" list="browsers" name="browser" type="text">
+
+            <datalist id="country">
+              <option value="cairo"></option>
+            </datalist>
+
+            <label for="city">City</label>
+            <input id="city" type="text" list="browsers" name="browser" >
+
+            <datalist id="city">
+              <option value=""></option>
+            </datalist>
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+
+        <div class="date">
+          <p class="gregorian">00/00/0000</p>
+          <h3 class="hijri"> 13 / 03 / 1447</h3>
+        </div>
+      </div>
+
+      <div class="times">
+        <div class="prayers">
+          <h2 class="fajr">Fajr 
+            <span class="Prayer-time">00:00</span> 
+          </h2>
+          <h2 class="dhuhr">dhuhr 
+            <span class="Prayer-time">00:00</span> 
+          </h2>
+          <h2 class="asr">Asr 
+            <span class="Prayer-time">00:00</span> 
+          </h2>
+          <h2 class="maghrib">Maghrib 
+            <span class="Prayer-time">00:00</span> 
+          </h2>
+          <h2 class="isha">Isha 
+            <span class="Prayer-time">00:00</span> 
+          </h2>
+        </div>
+
+        <div class="clock">
+          <div class="time-now">
+            <h1>
+              <p>Time Now</p>
+              <div>
+                <span class="hour">00</span>
+                <span>:</span>
+                <span class="minute">00</span>
+                <span>:</span>
+                <span class="second">00</span>
+              </div>
+            </h1>
+          </div>
+
+          <div class="time-remaining">
+            <h1>
+              <p>Time Remaining</s>
+              <div>
+                <span class="hour">00</span>
+                <span>:</span>
+                <span class="minute">00</span>
+                <span>:</span>
+                <span class="second">00</span>
+              </div>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
