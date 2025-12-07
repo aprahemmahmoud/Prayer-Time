@@ -80,6 +80,17 @@ main {
   cursor: pointer;
 }
 
+.loaction button:hover {
+  background-color: rgb(10, 70, 57);
+}
+
+.loaction button#reset {
+  background-color: rgba(220, 20, 60, 0.514);
+}
+
+.loaction button#reset:hover {
+  background-color: crimson;
+}
 
 
 .loaction-and-date .date {
@@ -90,7 +101,9 @@ main {
   justify-content: center;
   align-items: flex-end;
   padding-right: 3rem;
+  position: relative;
 }
+
 
 .loaction-and-date .date p {
   font-size: 2rem;
@@ -173,3 +186,6 @@ main {
   align-items: center;
   background-color: rgb(61, 10, 10);
 }
+
+
+

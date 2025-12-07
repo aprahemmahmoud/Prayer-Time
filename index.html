@@ -12,24 +12,23 @@
       <div class="loaction-and-date">
         <div class="loaction">
           <form action="">
-            <label for="country">Country</label>
-            <input id="country" list="browsers" name="browser" type="text">
 
-            <datalist id="country">
-              <option value="cairo"></option>
+            <label for="country">Country:</label>
+            <input id="country" list="countryList" name="country">
+
+            <datalist id="countryList">
             </datalist>
 
             <label for="city">City</label>
-            <input id="city" type="text" list="browsers" name="browser" >
+            <input id="city" list="cityList" name="city" >
 
-            <datalist id="city">
-              <option value=""></option>
+            <datalist id="cityList">
             </datalist>
 
             <button type="submit">Submit</button>
+            <button id="reset" type="reset">Reset</button>
           </form>
         </div>
-
         <div class="date">
           <p class="gregorian">00/00/0000</p>
           <h3 class="hijri"> 13 / 03 / 1447</h3>
