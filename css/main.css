@@ -1,191 +1,393 @@
+:root {
+  --primary-color: #0a4639;
+  --secondary-color: #3d0a0a;
+  --text-color: #ffffff;
+  --prayer-bg: rgba(0, 15%, 26%, 0.9);
+  --container-bg: rgba(0, 0, 0, 0.7);
+  --border-radius: 12px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
-  font-family: sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 main {
-  background-image: url(../images/katerina-kerd.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../images/katerina-kerd.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
+
 .cont {
-  width: 80%;
-  height: 100%;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 90vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  row-gap: 2rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--container-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
 }
 
-/* loaction and date */
-
+/* Location and Date Section */
 .loaction-and-date {
   width: 100%;
-  height: 30%;
   display: flex;
-  justify-content: center;
-  border-radius: 10px;
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
 }
 
-.loaction-and-date .loaction {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding-left: 3rem;
+.loaction {
+  flex: 1;
+  min-width: 300px;
 }
 
 .loaction form {
+  display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  gap: 1rem;
 }
 
-.loaction form label {
-  font-size: 1.5rem;
+.loaction label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  display: block;
 }
 
-.loaction form input {
+.loaction input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
   font-size: 1rem;
-  padding: 0.5rem;
-  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.loaction input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(10, 70, 57, 0.3);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .loaction button {
-  font-size: 1rem;
-  padding: 0.5rem;
-  margin-top: 10px;
-  border-radius: 5px;
-  outline: none;
+  flex: 1;
+  padding: 0.8rem 1.5rem;
   border: none;
-  background-color: rgba(10, 70, 57, 0.856);
-  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.loaction button:hover {
-  background-color: rgb(10, 70, 57);
+.loaction button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.loaction button[type="submit"]:hover {
+  background-color: #0c5a4a;
+  transform: translateY(-2px);
 }
 
 .loaction button#reset {
-  background-color: rgba(220, 20, 60, 0.514);
+  background-color: rgba(220, 20, 60, 0.8);
+  color: white;
 }
 
 .loaction button#reset:hover {
-  background-color: crimson;
+  background-color: #c51135;
+  transform: translateY(-2px);
 }
 
-
-.loaction-and-date .date {
-  width: 50%;
-  height: 100%;
+.date {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding-right: 3rem;
-  position: relative;
+  text-align: right;
+  min-width: 250px;
 }
 
-
-.loaction-and-date .date p {
-  font-size: 2rem;
+.date p,
+.date h3 {
+  margin: 0.3rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.loaction-and-date .date h3 {
-  font-size: 2rem;
-}
-
-/* Times */
+/* Prayer Times Section */
 .times {
-  width: 70%;
-  height: 80%;
+  width: 100%;
+  flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 20px;
-  border-radius: 10px;
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
 }
 
-/* prayers */
 .prayers {
-  width: 80%;
-  height: 100%;
-  display: flex;
-  column-gap: 1rem;
-  justify-content: center;
-  align-items: center;
+  flex: 2;
+  min-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  align-content: center;
 }
 
 .prayers h2 {
-  background-color: rgb(0%, 15%, 26%);
-  width: 20%;
-  height: 20%;
-  padding: 0px 1rem;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-/* clock */
-.clock {
-  width: 30%;
-  height: 100%;
+  background: var(--prayer-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  row-gap: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  min-height: 120px;
+}
+
+.prayers h2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.prayers .Prayer-time {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  color: #4fc3f7;
+}
+
+/* Clock Section */
+.clock {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.time-now,
+.time-remaining {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: var(--border-radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  backdrop-filter: blur(5px);
 }
 
 .time-now {
-  width: 100%;
-  height: 30%;
-  display: flex;
-  justify-content: center;
-  border-radius: 20px;
-  align-items: center;
-  background-color: rgb(1%, 2%, 6%);
+  background: rgba(1%, 2%, 6%, 0.8);
+}
+
+.time-remaining {
+  background: rgba(61, 10, 10, 0.8);
 }
 
 .clock h1 {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
 }
 
+.clock h1 > div {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 0.5rem;
+  color: #ffd700;
+}
 
-.time-remaining {
+.clock span {
+  display: inline-block;
+  min-width: 2.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .prayers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .loaction-and-date {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .loaction,
+  .date {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .date {
+    align-items: center;
+    text-align: center;
+  }
+
+  .times {
+    flex-direction: column;
+  }
+
+  .prayers {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .clock {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .time-now,
+  .time-remaining {
+    flex: 1;
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prayers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clock {
+    flex-direction: column;
+  }
+
+  .time-now,
+  .time-remaining {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .cont {
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .prayers {
+    grid-template-columns: 1fr;
+  }
+
+  .prayers h2 {
+    min-height: 100px;
+  }
+
+  .loaction button {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .date p,
+  .date h3 {
+    font-size: 1.3rem;
+  }
+
+  .clock h1 {
+    font-size: 1.5rem;
+  }
+
+  .clock h1 > div {
+    font-size: 2rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cont > * {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Loading State */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
   width: 100%;
-  height: 30%;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(61, 10, 10);
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: loading 1.5s infinite;
 }
 
-
-
+@keyframes loading {
+  to {
+    left: 100%;
+  }
+}

@@ -1,5 +1,3 @@
-  // set the data
-
 // Prayer-times
 let fajr = document.querySelector(".fajr .Prayer-time")
 let dhuhr = document.querySelector(".dhuhr .Prayer-time")
